@@ -1,3 +1,7 @@
+Movie search app.
+Search any movie and see its release date, rating and description.
+
+This app uses the movie database API.
 API Key (v3 auth)
 7e8845586d780d43d2434f0780112873
 
