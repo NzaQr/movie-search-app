@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import MovieCard from "./MovieCard";
+
 export default function SearchMovies() {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
   const searchMovies = async (event) => {
     event.preventDefault();
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=7e8845586d780d43d2434f0780112873&language=en-US&query=${query}&page=1&include_adult=false`;
+    const api_key = process.env.REACT_APP_API_KEY;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&language=en-US&query=${query}&page=1&include_adult=false`;
 
     try {
       const response = await fetch(url);
