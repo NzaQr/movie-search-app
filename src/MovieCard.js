@@ -59,7 +59,8 @@ export default function MovieCard({ movie, api_key }) {
           <iframe
             title={movie.title + " trailer"}
             width="100%"
-            height="315"
+            frameborder="0"
+            allow="fullscreen"
             src={`https://www.youtube.com/embed/${trailerId}`}
           ></iframe>
         )}
