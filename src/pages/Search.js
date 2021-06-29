@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "../components/MovieCard";
+import "./Search.css";
 
-export default function SearchMovies() {
+export default function Search() {
   const [query, setQuery] = useState("");
   const [isQueryEmpty, setIsQueryEmpty] = useState(false);
   const [movies, setMovies] = useState([]);
@@ -26,23 +27,26 @@ export default function SearchMovies() {
   };
 
   return (
-    <>
-      <form className="form" onSubmit={searchMovies}>
-        <label htmlFor="query" className="label">
-          Movie Name
-        </label>
+    <div>
+      <div className="search-container">
+        <h1 className="title">Search</h1>
+        <form className="form" onSubmit={searchMovies}>
+          <label htmlFor="query" className="label">
+            Movie Name
+          </label>
 
-        <input
-          className="input"
-          type="text"
-          name="query"
-          placeholder="i.e. Jurassic Park"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        {isQueryEmpty && <p>Enter a movie name!</p>}
-        <button className="button">Search</button>
-      </form>
+          <input
+            className="input"
+            type="text"
+            name="query"
+            placeholder="i.e. Jurassic Park"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          {isQueryEmpty && <p>Enter a movie name!</p>}
+          <button className="button">Search</button>
+        </form>
+      </div>
       <div className="card-list">
         {movies
           .filter((movie) => movie.poster_path)
@@ -50,6 +54,6 @@ export default function SearchMovies() {
             <MovieCard movie={movie} key={movie.id} api_key={api_key} />
           ))}
       </div>
-    </>
+    </div>
   );
 }
