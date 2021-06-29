@@ -9,7 +9,7 @@ import "./App.css";
 
 export default function App() {
   return (
-    <div className="container">
+    <>
       <Router>
         <Header />
         <Switch>
@@ -17,6 +17,6 @@ export default function App() {
           <Route path="/search" exact component={Search} />
         </Switch>
       </Router>
-    </div>
+    </>
   );
 }

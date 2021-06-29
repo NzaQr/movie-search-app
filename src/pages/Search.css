@@ -34,7 +34,6 @@
   border-radius: 10px;
   font-size: 1.4rem;
   cursor: pointer;
-  transition: background-color 250ms;
 }
 
 .button:hover {
@@ -43,6 +42,12 @@
 
 form p {
   text-align: center;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 800px) {
@@ -54,5 +59,11 @@ form p {
 
   .input {
     margin-bottom: 0;
+  }
+
+  .card-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

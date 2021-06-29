@@ -20,9 +20,13 @@ export default function SearchMovies() {
   return (
     <>
       <h1 className="trending-title">Trending today</h1>
-      {movies.map((movie) => (
-        <MovieCard movie={movie} key={movie.id} api_key={api_key} />
-      ))}
+      <div className="card-list">
+        {movies.map((movie) => (
+          <div>
+            <MovieCard movie={movie} key={movie.id} api_key={api_key} />
+          </div>
+        ))}
+      </div>
     </>
   );
 }

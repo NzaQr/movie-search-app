@@ -51,7 +51,9 @@ export default function Search() {
         {movies
           .filter((movie) => movie.poster_path)
           .map((movie) => (
-            <MovieCard movie={movie} key={movie.id} api_key={api_key} />
+            <div key={movie.id}>
+              <MovieCard movie={movie} key={movie.id} api_key={api_key} />
+            </div>
           ))}
       </div>
     </div>
